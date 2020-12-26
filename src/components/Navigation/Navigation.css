@@ -1,0 +1,22 @@
+.nav-bar{
+    background-color: #272727;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0px 5px 10px 0px #0000003a;
+    padding-left: 5%;
+    padding-right: 5%;
+    color: white;
+}
+
+.nav-bar a{
+    text-decoration: none;
+    color: #ffffff;
+}
+.nav-bar a:hover{
+    text-decoration: underline;
+}
+
+ .nav-bar h2:hover{
+     cursor: pointer;
+ }
