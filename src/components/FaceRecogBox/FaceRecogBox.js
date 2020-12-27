@@ -6,7 +6,7 @@ class FaceRecogBox extends Component {
         return (
             <div className="main-container">
                 <div className="brokenlines-container">
-                    <h3>Drag and drop to upload <br/> Or <strong>browse</strong> this device</h3>
+                    <h3>Drag and drop to upload <br/> Or <a href="/">browse</a> this device</h3>
                 </div>
             </div>
         );

@@ -24,12 +24,13 @@
     font-weight: 600;
     font-size: 18px;
     font-family: 'Lato', sans-serif;
-    transition: 0.5s;
+    transition: 0.7s;
     box-shadow: 0px 2px 5px 0px #17aaff5d;
     z-index: 1;
 }
 
 .input-container button:hover{
     cursor: pointer;
+    background-color: #7bc6f8;
     box-shadow: 0px 2px 8px 0px #58c2ffa9;
 }
