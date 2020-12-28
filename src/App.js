@@ -11,18 +11,25 @@ const app = new Clarifai.App({
 class App extends Component {
   // Class State
   state = {
-    input: ''
+    input: '',
+    imageUrl: ''
   }
 
   onInputChange = (e) => {
-    console.log(e.target.value);
+    this.setState({
+      input: e.target.value
+    });
   }
 
   onBtnSubmit = () => {
+    this.setState({
+      imageUrl: this.state.input
+    });
+
     // Detect image
-    app.models.predict({id:'MODEL_ID', version:'MODEL_VERSION_ID'}, "https://samples.clarifai.com/metro-north.jpg")
+    app.models.predict(Clarifai.FACE_DETECT_MODEL, this.state.input)
     .then(function(response) {
-      // do something with response
+      console.log(response.outputs[0].data.regions[0].region_info.bounding_box);
     },
     function(err) {
       // there was an error
@@ -36,7 +43,7 @@ class App extends Component {
       <div className="App">
         <Navigation/>
         <LinkInput onInputChange={this.onInputChange} onBtnSubmit={this.onBtnSubmit}/>
-        <FaceRecogBox/>
+        <FaceRecogBox imageUrl={this.state.imageUrl}/>
       </div>
     );
   }
