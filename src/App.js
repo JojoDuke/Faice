@@ -12,7 +12,12 @@ class App extends Component {
   // Class State
   state = {
     input: '',
-    imageUrl: ''
+    imageUrl: '',
+    box: {}
+  }
+
+  calculateFaceLocation = (data) => {
+
   }
 
   onInputChange = (e) => {
@@ -29,7 +34,8 @@ class App extends Component {
     // Detect image
     app.models.predict(Clarifai.FACE_DETECT_MODEL, this.state.input)
     .then(function(response) {
-      console.log(response.outputs[0].data.regions[0].region_info.bounding_box);
+      //console.log(response.outputs[0].data.regions[0].region_info.bounding_box);
+      this.calculateFaceLocation(response);
     },
     function(err) {
       // there was an error
