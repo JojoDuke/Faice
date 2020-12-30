@@ -19,14 +19,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    display: none;
-}
-
-.image-container{
-    width: 500px;
-    height: auto;
-    background-repeat: no-repeat;
-    background-image: url("https://www.byrdie.com/thmb/pr2U7ghfvv3Sz8zJCHWFLT2K55E=/735x0/cdn.cliqueinc.com__cache__posts__274058__face-masks-for-pores-274058-1543791152268-main.700x0c-270964ab60624c5ca853057c0c151091-d3174bb99f944fc492f874393002bab7.jpg");
 }
 
 .brokenlines-container a{
@@ -34,4 +26,25 @@
     font-weight: 700;
     cursor: pointer;
     text-decoration: none;
+    transition: 0.3s;
+}
+
+.brokenlines-container a:hover{
+    color: #a9d9f8;
+}
+
+.faces{
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.faces img{
+    width: 650px;
+    height: auto;
+}
+
+.vanish{
+    display: none;
 }

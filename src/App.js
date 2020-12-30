@@ -13,6 +13,7 @@ class App extends Component {
   state = {
     input: '',
     imageUrl: '',
+    isDivVisible: true,
     box: {}
   }
 
@@ -27,6 +28,7 @@ class App extends Component {
   }
 
   onBtnSubmit = () => {
+    // Change state
     this.setState({
       imageUrl: this.state.input
     });
@@ -38,7 +40,6 @@ class App extends Component {
       this.calculateFaceLocation(response);
     },
     function(err) {
-      // there was an error
       alert('There was an error');
     }
   );
