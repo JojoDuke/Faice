@@ -1,7 +1,7 @@
 import React from 'react';
 import '../FaceRecogBox/FaceRecogBox.css'
 
-const FaceRecogBox = ({ imageUrl, isDivVisible }) => {
+const FaceRecogBox = ({ imageUrl, isDivVisible, box }) => {
     return (
         <div>
             <div className={`main-container ${!isDivVisible && "vanish"}`}>
@@ -11,7 +11,11 @@ const FaceRecogBox = ({ imageUrl, isDivVisible }) => {
             </div>
 
             <div className="faces">
-                <img src={imageUrl} alt="" className="faces"/>
+                <img id="inputimage" src={imageUrl} alt="" className="faces"/>
+                <div className="bounding-box" 
+                     style={{top: box.topRow, right: box.rightCol, bottom: box.bottomRow, left: box.leftCol}}>
+
+                </div>
             </div>
         </div> 
         );

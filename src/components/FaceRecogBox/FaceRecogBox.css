@@ -45,6 +45,16 @@
     height: auto;
 }
 
+.bounding-box{
+    position: absolute;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 0 0 4px #46b1f8 inset;
+    z-index: 1;
+}
+
 .vanish{
     display: none;
 }
