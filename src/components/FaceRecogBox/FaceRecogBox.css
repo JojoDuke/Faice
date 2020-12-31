@@ -35,12 +35,13 @@
 
 .faces{
     z-index: 1;
-    display: flex;
-    justify-content: center;
+    left: 5rem;
     margin-top: 20px;
-}
-
-.faces img{
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    text-align: center;
     width: 650px;
     height: auto;
 }

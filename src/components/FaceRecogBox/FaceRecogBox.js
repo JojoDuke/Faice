@@ -6,15 +6,14 @@ const FaceRecogBox = ({ imageUrl, isDivVisible, box }) => {
         <div>
             <div className={`main-container ${!isDivVisible && "vanish"}`}>
                 <div className="brokenlines-container">
-                    <h3>Drag and drop to upload <br/> Or <a href="/">browse</a> this device</h3>
+                    <h3>Drag and drop to upload <br/> Or <a href="/home">browse</a> this device</h3>
                 </div>
             </div>
 
-            <div className="faces">
-                <img id="inputimage" src={imageUrl} alt="" className="faces"/>
+            <div className="faces absolute">
+                <img id="inputimage" src={imageUrl} alt=""/>
                 <div className="bounding-box" 
                      style={{top: box.topRow, right: box.rightCol, bottom: box.bottomRow, left: box.leftCol}}>
-
                 </div>
             </div>
         </div> 
