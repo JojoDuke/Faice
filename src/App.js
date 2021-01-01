@@ -2,11 +2,19 @@ import React, { Component } from "react";
 import Navigation from "./components/Navigation/Navigation";
 import LinkInput from "./components/LinkInput/LinkInput";
 import FaceRecogBox from "./components/FaceRecogBox/FaceRecogBox";
+import ErrorBox from "./components/ErrorBox/ErrorBox";
 import Clarifai from "clarifai";
 
 const app = new Clarifai.App({
   apiKey: "8e2353e633e346fc8fe9412deb92ca7a"
 });
+
+function buildFileSelector(){
+  const fileSelector = document.createElement('input');
+  fileSelector.setAttribute('type', 'file');
+  fileSelector.setAttribute('multiple', 'multiple');
+  return fileSelector;
+}
 
 class App extends Component {
   // Class State
@@ -14,8 +22,18 @@ class App extends Component {
     input: "",
     imageUrl: "",
     isDivVisible: true,
+    showModal: false,
     box: {}
   };
+
+  componentDidMount(){
+    this.fileSelector = buildFileSelector();
+  }
+  
+  fileSelect = (e) => {
+    e.preventDefault();
+    this.fileSelector.click();
+  }
 
   calculateFaceLocation = (faceData) => {
     const clarifaiFace = faceData.outputs[0].data.regions[0].region_info.bounding_box;
@@ -55,13 +73,27 @@ class App extends Component {
     // Detect image
     app.models.predict(Clarifai.FACE_DETECT_MODEL, this.state.input)
       .then(response => this.displayBox(this.calculateFaceLocation(response)))
-      .catch(err => alert('An error'));
+      .catch(err => {
+        this.setState({
+          showModal: true
+        });
+      })
   };
+
+  // This allows you to close the modal when done
+  closeModal = () => {
+    this.setState({
+      showModal: false
+    });
+  }
 
   render() {
     return (
       <div className="App">
         <Navigation />
+        <ErrorBox showModal={this.state.showModal}
+                  closeModal={this.closeModal}
+        />
         <LinkInput
           onInputChange={this.onInputChange}
           onBtnSubmit={this.onBtnSubmit}
@@ -70,6 +102,7 @@ class App extends Component {
           imageUrl={this.state.imageUrl}
           isDivVisible={this.state.isDivVisible}
           box={this.state.box}
+          fileSelect={this.fileSelect}
         />
       </div>
     );

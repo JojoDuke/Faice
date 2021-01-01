@@ -1,12 +1,12 @@
 import React from 'react';
 import '../FaceRecogBox/FaceRecogBox.css'
 
-const FaceRecogBox = ({ imageUrl, isDivVisible, box }) => {
+const FaceRecogBox = ({ imageUrl, isDivVisible, box, fileSelect }) => {
     return (
         <div>
             <div className={`main-container ${!isDivVisible && "vanish"}`}>
                 <div className="brokenlines-container">
-                    <h3>Drag and drop to upload <br/> Or <a href="/home">browse</a> this device</h3>
+                    <h3>Drag and drop to upload <br/> Or <a href="/home" onClick={fileSelect}>browse</a> this device</h3>
                 </div>
             </div>
 

@@ -1,6 +1,7 @@
 .nav-bar{
     background-color: #272727;
     display: flex;
+    position: relative;
     justify-content: space-between;
     align-items: center;
     height: 8vh;
@@ -8,6 +9,7 @@
     padding-left: 5%;
     padding-right: 5%;
     color: white;
+    z-index: 2;
 }
 
 .nav-bar a{
