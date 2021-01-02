@@ -7,9 +7,30 @@
 body {
   background-color: rgb(189, 223, 252);
   font-family: 'Lato', sans-serif;
+  overflow-x: hidden;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.text2{
+  display: none;
+}
+
+/*TABLETS*/
+@media only screen and (max-width: 768px){
+  .text1{
+    display: none;
+  }
+
+  .text2{
+    display: inline;
+  }
+}
+
+/*PHONES*/
+@media only screen and (max-width: 450px){
+  
 }

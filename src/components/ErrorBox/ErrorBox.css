@@ -50,3 +50,10 @@
         transform: translateY(0px);
     }
 }
+
+/*PHONES*/
+@media only screen and (max-width: 720px){
+  .container{
+      height: 100px;
+  }
+}

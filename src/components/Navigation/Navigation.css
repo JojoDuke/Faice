@@ -20,6 +20,17 @@
     text-decoration: underline;
 }
 
- .nav-bar h2:hover{
-     cursor: pointer;
- }
+
+ /*PHONES*/
+@media only screen and (max-width: 450px){
+    .nav-bar{
+        display: flex;
+        justify-content: center;
+        height: 10vh;
+        padding: 0;
+        width: 155%;
+    }
+    .nav-bar a{
+        display: none;
+    }
+}
