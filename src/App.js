@@ -14,7 +14,6 @@ class App extends Component {
   state = {
     input: "",
     imageUrl: "",
-    newImages: null,
     isDivVisible: true,
     showModal: false,
     box: {}
