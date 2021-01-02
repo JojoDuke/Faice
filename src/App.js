@@ -9,31 +9,16 @@ const app = new Clarifai.App({
   apiKey: "8e2353e633e346fc8fe9412deb92ca7a"
 });
 
-function buildFileSelector(){
-  const fileSelector = document.createElement('input');
-  fileSelector.setAttribute('type', 'file');
-  fileSelector.setAttribute('multiple', 'multiple');
-  return fileSelector;
-}
-
 class App extends Component {
   // Class State
   state = {
     input: "",
     imageUrl: "",
+    newImages: null,
     isDivVisible: true,
     showModal: false,
     box: {}
   };
-
-  componentDidMount(){
-    this.fileSelector = buildFileSelector();
-  }
-  
-  fileSelect = (e) => {
-    e.preventDefault();
-    this.fileSelector.click();
-  }
 
   calculateFaceLocation = (faceData) => {
     const clarifaiFace = faceData.outputs[0].data.regions[0].region_info.bounding_box;
@@ -100,9 +85,9 @@ class App extends Component {
         />
         <FaceRecogBox
           imageUrl={this.state.imageUrl}
+          newImages={this.state.newImages}
           isDivVisible={this.state.isDivVisible}
           box={this.state.box}
-          fileSelect={this.fileSelect}
         />
       </div>
     );

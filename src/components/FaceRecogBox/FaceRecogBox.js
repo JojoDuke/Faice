@@ -6,8 +6,8 @@ const FaceRecogBox = ({ imageUrl, isDivVisible, box, fileSelect }) => {
         <div>
             <div className={`main-container ${!isDivVisible && "vanish"}`}>
                 <div className="brokenlines-container">
-                    <h3 className="text1">Drag and drop to upload <br/> Or <a href="/home" onClick={fileSelect}>browse</a> this device</h3>
-                    <h3 className="text2"><a href="/home" onClick={fileSelect}>Browse</a> this device</h3>
+                    <h3 className="text1">Drag and drop to upload <br/> Or <strong>browse</strong> this device</h3>
+                    <h3 className="text2"><strong>Browse</strong> this device</h3>
                 </div>
             </div>
 

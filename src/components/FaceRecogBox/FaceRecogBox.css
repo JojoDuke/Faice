@@ -21,7 +21,7 @@
     align-items: center;
 }
 
-.brokenlines-container a{
+.brokenlines-container strong{
     color: #46b1f8;
     font-weight: 700;
     cursor: pointer;
@@ -29,7 +29,7 @@
     transition: 0.3s;
 }
 
-.brokenlines-container a:hover{
+.brokenlines-container strong:hover{
     color: #a9d9f8;
 }
 
