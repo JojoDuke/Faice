@@ -6,7 +6,6 @@ And preview it down below!
 
 ## Things Used
 * React
-* Redux
 * Tachyons CSS
 * Clarifai API
 
