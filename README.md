@@ -5,7 +5,7 @@ Check it out here: https://faice-q4w1ybhg1.vercel.app/
 And preview it down below!
 
 ## Things Used
-* React
+* React.js
 * Tachyons CSS
 * Clarifai API
 
